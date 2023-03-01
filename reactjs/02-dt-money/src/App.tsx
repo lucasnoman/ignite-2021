@@ -19,7 +19,7 @@ export function App() {
     setIsNewTransactionModalOpen(false);
   }
 
-  // Comunicação de FILHO para PAI no Header.
+  // NOTE - Comunicação de FILHO para PAI no Header.
   // Dou um nome para a propriedade e envio uma função para ela.
   // O filho vai conseguir executar essa função e alterar o "state" do pai.
   return (
