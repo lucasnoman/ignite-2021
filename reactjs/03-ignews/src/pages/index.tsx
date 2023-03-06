@@ -47,7 +47,7 @@ export const getStaticProps: GetStaticProps = async () => {
     amount: new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
-    }).format(price.unit_amount! / 100), // NOTE - coloquei o ! para dizer que sempre terá valor. Ficar de olho.
+    }).format(price.unit_amount! / 100), // REVIEW - coloquei o ! para dizer que sempre terá valor. Ficar de olho.
   };
 
   return {
