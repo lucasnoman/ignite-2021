@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import avatar from 'public/images/avatar.svg';
@@ -38,7 +38,8 @@ export default function Home({ product }: HomeProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+// NOTE - Apesar de mais rápido, é menos dinâmico em relação do getServerSideProps
+export const getStaticProps: GetStaticProps = async () => {
   const price = await stripe.prices.retrieve('price_1Mih5qHTwSJSILQmFStBCp7j');
 
   const product = {
@@ -53,5 +54,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
     props: {
       product,
     },
+    // NOTE - Tempo em segundos que uma página se mantem sem ser revalidada/reconstruída
+    // Caso haja uma mudança no código da página, após o tempo definido, ele aparecerá lá
+    revalidate: 60 * 60 * 24, // 24 horas
   };
 };
