@@ -13,8 +13,7 @@ const checkout = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
     const session = await getSession({ req });
 
-    // FIXME - a primeira sessão sempre está retornando undefined e vem para esse "if"
-    if (!session) return res.status(401);
+    if (!session) return res.status(401).send('Erro ao iniciar a sessão');
 
     const user = await fauna.query<User>(
       q.Get(
