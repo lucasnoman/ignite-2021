@@ -1,0 +1,28 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "curve"
+  },
+  "title": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Pariatur culpa enim Lorem occaecat in magna do enim esse. Exercitation deserunt exercitation qui ullamco laboris irure proident aliqua velit amet in eu consequat qui."
+        }
+      }
+    ]
+  },
+  "content": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Excepteur voluptate deserunt dolore in aute dolore laboris enim ipsum ad. Ipsum cillum laboris nulla irure commodo consectetur ad aliquip ipsum amet. Consequat nostrud laboris laboris proident magna est et anim exercitation consectetur ad nulla."
+        }
+      }
+    ]
+  }
+}
