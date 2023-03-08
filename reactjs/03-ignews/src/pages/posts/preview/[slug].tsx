@@ -1,9 +1,11 @@
 import { getPrismicClient } from '@/src/services/prismic';
-import { GetStaticProps } from 'next';
-import { getSession } from 'next-auth/react';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import { useSession } from 'next-auth/react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { RichText } from 'prismic-dom';
+import { useEffect } from 'react';
 import styles from '../post.module.scss';
 
 interface PostPreviewProps {
@@ -16,6 +18,15 @@ interface PostPreviewProps {
 }
 
 export default function PostPreview({ post }: PostPreviewProps) {
+  const { status } = useSession();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (status === 'authenticated') {
+      router.push(`/posts/${post.slug}`);
+    }
+  }, [status]);
+
   return (
     <>
       <Head>
@@ -41,9 +52,17 @@ export default function PostPreview({ post }: PostPreviewProps) {
   );
 }
 
-export const getStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths = async () => {
+  // Gera as páginas estáticas antes do build.
+  // Para isso, o slug tem que estar presente nos parâmetros
   return {
-    paths: [],
+    paths: [
+      // {
+      //   params: {
+      //     slug: 'what-are-web-fonts',
+      //   },
+      // },
+    ],
     fallback: 'blocking',
   };
 };
@@ -71,5 +90,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: { post },
+    redirect: 60 * 30,
   };
 };
