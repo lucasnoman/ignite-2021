@@ -1,7 +1,7 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "curve"
+    "value": "huge"
   },
   "title": {
     "__TYPE__": "StructuredTextContent",
@@ -9,7 +9,7 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Pariatur culpa enim Lorem occaecat in magna do enim esse. Exercitation deserunt exercitation qui ullamco laboris irure proident aliqua velit amet in eu consequat qui."
+          "text": "Magna ex culpa aliquip ea irure velit culpa nostrud id labore."
         }
       }
     ]
@@ -20,7 +20,7 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Excepteur voluptate deserunt dolore in aute dolore laboris enim ipsum ad. Ipsum cillum laboris nulla irure commodo consectetur ad aliquip ipsum amet. Consequat nostrud laboris laboris proident magna est et anim exercitation consectetur ad nulla."
+          "text": "Laborum nulla consequat nisi duis cupidatat laborum. Aliqua elit laborum ipsum elit reprehenderit magna do aute eu eu voluptate commodo."
         }
       }
     ]
