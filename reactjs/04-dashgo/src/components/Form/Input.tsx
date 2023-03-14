@@ -15,12 +15,11 @@ export function Input({ name, label, ...rest }: InputProps) {
     // FormControl serve para cada "conjunto" dentro de um form. Ajuda também no caso do stack, a não ficar com espaço entre a label e input.
 
     <FormControl>
-      {!!label && <FormLabel htmlFor='email'>E-mail</FormLabel>}
+      {!!label && <FormLabel htmlFor={name}>{label}</FormLabel>}
 
       <ChakraInput
-        id='email'
-        name='email'
-        type='email'
+        id={name}
+        name={name}
         focusBorderColor='pink.500'
         bgColor='gray.900'
         variant='filled'
